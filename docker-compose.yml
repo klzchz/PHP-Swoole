@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+#    command: "php public/index.php"
+    networks:
+      - swoole
+networks:
+    swoole:
+        driver: bridge
